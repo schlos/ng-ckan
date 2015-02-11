@@ -4,3 +4,9 @@ node_js:
 before_script:
   - 'npm install -g bower grunt-cli'
   - 'bower install'
+  - 'grunt serve > /dev/null &'
+  - 'sleep 3'
+
+script:
+  - 'grunt test'
+
