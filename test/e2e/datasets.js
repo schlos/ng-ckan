@@ -21,4 +21,9 @@ describe('datasets', function() {
     expect(datasetList.get(1).getText()).toMatch('Published by');
   });
 
+  it('root should redirect to datasets', function() {
+    browser.get('/');
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '#/datasets');
+  });
+
 });
