@@ -1,0 +1,12 @@
+<div class="row" ng-controller="DatasetsCtrl">
+  <div class="col-sm-9">
+    <div class="row">
+      <strong>{{datasets.length}} datasets available</strong>
+    </div>
+    <div class="dataset row" ng-repeat="dataset in datasets">
+      <h4><a href="datasets/{{dataset.name}}">{{dataset.title}}</a></h4>
+      <p>{{dataset.notes}}</p>
+      <cite class="text-muted">Published by {{dataset.organization.title}} - {{dataset.metadata_modified}}</cite>
+    </div>
+  </div>
+</div>
