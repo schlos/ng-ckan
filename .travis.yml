@@ -3,4 +3,11 @@ node_js:
   - '0.10'
 before_script:
   - 'npm install -g bower grunt-cli'
+  - 'gem install compass'
   - 'bower install'
+  - 'grunt serve > /dev/null &'
+  - 'sleep 3'
+
+script:
+  - 'grunt test'
+
