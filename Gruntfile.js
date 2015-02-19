@@ -418,6 +418,16 @@ module.exports = function (grunt) {
           args: {}
         }
       }
+    },
+
+    coveralls: {
+      options: {
+        debug: true,
+        coverageDir: 'coverage/',
+        dryRun: true,
+        force: true,
+        recursive: true
+      }
     }
 
   });
