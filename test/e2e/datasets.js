@@ -26,4 +26,15 @@ describe('datasets', function() {
     expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '#/datasets');
   });
 
+  it('should filter datasets as a user types into the search box', function() {
+    var search = element(by.model('search'));
+    // By title
+    search.sendKeys('comercio');
+    expect(datasetList.count()).toEqual(1);
+    search.clear();
+    // By notes
+    search.sendKeys('de productos');
+    expect(datasetList.count()).toEqual(1);
+  });
+
 });

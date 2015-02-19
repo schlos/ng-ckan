@@ -1,13 +1,19 @@
 <div class="row" ng-controller="GroupsCtrl">
+
   <div class="row">
     <strong>{{groups.length}} groups publishing data</strong>
+    <div class="col-sm-12">
+      Search: 
+      <input type="text" search controller="GroupsCtrl" update="groups" ng-model="search">
+    </div>
   </div>
 
   <div class="row">
     <div class="col-sm-3">
     </div>
+
     <div class="col-sm-9">
-      <div class="col-md-3" ng-repeat="group in groups">
+      <div class="col-md-3" ng-repeat="group in groups | filter:search">
         <a href="#" class="thumbnail">
           <img src="{{group.image_display_url}}" alt="Logo de {{group.display_name}}" />
         </a>

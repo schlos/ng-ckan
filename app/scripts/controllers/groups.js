@@ -13,17 +13,24 @@ angular.module('ngCkanApp')
     // | jq '[.result[] | { display_name, image_display_url }]'
     $scope.groups = [
       {
-        "display_name": "ReconstrucciónMX",
-        "image_display_url": ""
+        'display_name': 'ReconstrucciónMX',
+        'image_display_url': ''
       },
       {
-        "display_name": "Segundo Informe de Gobierno 2013-2014",
-        "image_display_url": "http://www.presidencia.gob.mx/segundoinforme/wp-content/themes/informe/assets/frontend/img/logo-big.png"
+        'display_name': 'Segundo Informe de Gobierno 2013-2014',
+        'image_display_url': 'http://www.presidencia.gob.mx/segundoinforme/wp-content/themes/informe/assets/frontend/img/logo-big.png'
       },
       {
-        "display_name": "Tu Gobierno en Mapas",
-        "image_display_url": ""
+        'display_name': 'Tu Gobierno en Mapas',
+        'image_display_url': ''
       }
     ];
+
+    $scope.query = function(query) {
+      return _.filter(this.groups, function(group) {
+        return  !_.isNull(group.display_name.match(query));
+      });
+    };
+
   }]);
 

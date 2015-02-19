@@ -23,4 +23,11 @@ describe('groups', function() {
     expect(element.all(by.css('img')).first().getAttribute('alt')).toMatch('Logo de');
   });
 
+  it('should filter groups as a user types into the search box', function() {
+    var search = element(by.model('search'));
+    // By name
+    search.sendKeys('Rec');
+    expect(groupList.count()).toEqual(1);
+  });
+
 });
