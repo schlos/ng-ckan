@@ -23,4 +23,12 @@ describe('organizations', function() {
     expect(element.all(by.css('img')).first().getAttribute('alt')).toMatch('Logo de');
   });
 
+  it('should filter organizations as a user types into the search box', function() {
+    var search = element(by.model('search'));
+    // By name
+    search.sendKeys('CON');
+    expect(organizationList.count()).toEqual(1);
+  });
+
 });
+
