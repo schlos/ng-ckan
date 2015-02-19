@@ -11,6 +11,7 @@ angular.module('ngCkanApp')
   .controller('DatasetsCtrl', ['$scope', function ($scope) {
     $scope.datasets = [
       {
+          'id': 'dad27302-550a-44a9-a554-e1ee40cdc4a9',
           'name': 'pgpb-volumen-de-comercio-exterior',
           'title': 'PGPB-Volumen de comercio exterior',
           'notes': 'Pemex-Gas y Petroquimica Basica-Volumen del comercio exterior de productos',
@@ -20,6 +21,7 @@ angular.module('ngCkanApp')
           }
       },
       {
+          'id': 'dad27302-550a-44a9-a554-e1ee40cdc4aa',
           'name': 'ppq-valor-de-ventas',
           'title': 'PPQ-Valor de ventas',
           'notes': 'Pemex-Petroquimica-Valor de las ventas internas',
@@ -29,6 +31,7 @@ angular.module('ngCkanApp')
           }
       },
       {
+          'id': 'dad27302-550a-44a9-a554-e1ee40cdc4ab',
           'name': 'ppq-volumen-de-ventas',
           'title': 'PPQ-Volumen de ventas',
           'notes': 'Pemex-Petroquimica-Volumen de las ventas internas',
@@ -38,4 +41,11 @@ angular.module('ngCkanApp')
           }
       }
     ];
+
+    $scope.query = function(query) {
+      return _.filter(this.datasets, function(dataset) {
+        return  !_.isNull(dataset.title.match(query)) ||
+                !_.isNull(dataset.notes.match(query));
+      });
+    };
   }]);
