@@ -1,0 +1,28 @@
+<div class="row" ng-controller="ResourcesCtrl">
+  <div class="col-sm-3">
+    <div class="thumbnail">
+      <img src="{{dataset.organization.image_url}}" alt="Logo de {{dataset.organization.title}}" />
+      <div class="caption">
+        <p>{{dataset.organization.description}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="row">
+      <p>{{dataset.title}}</p>
+      <p>{{dataset.notes}}</p>
+      <p><strong>Nivel de Gobierno:</strong> {{dataset.gov_type}}</p>
+      <hr />
+    </div>
+    <div class="row">
+      <p>Datos y recursos</p>
+    </div>
+    <div class="resource row" ng-repeat="resource in dataset.resources">
+      <hr />
+      <h4>{{resource.name}}</h4>
+      <p>{{resource.description}}</p>
+      <p>{{resource.format}}</p>
+      <a href="{{resource.url}}">Descarga</a>
+    </div>
+  </div>
+</div>

@@ -29,6 +29,10 @@ angular
         templateUrl: 'views/datasets.html',
         controller: 'DatasetsCtrl'
       })
+      .when('/resources', {
+        templateUrl: 'views/resources.html',
+        controller: 'ResourcesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
