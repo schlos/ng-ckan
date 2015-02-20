@@ -9,6 +9,7 @@
 angular.module('ngCkanApp')
   .directive('govTypesMenu', function () {
     return {
-      templateUrl: 'views/gov-types-menu.html'
+      templateUrl: 'views/gov-types-menu.html',
+      restrict: 'E'
     };
   });
