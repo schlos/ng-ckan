@@ -17,7 +17,7 @@ angular
     'ngTouch',
     'pascalprecht.translate'
   ])
-  .config(function ($routeProvider) {
+  .config(["$routeProvider", "$translateProvider", function ($routeProvider, $translateProvider) {
     $routeProvider
       .when('/', {
         redirectTo: '/datasets'
@@ -41,4 +41,10 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+    $translateProvider
+      .useStaticFilesLoader({
+        prefix: '/i18n/',
+        suffix: '.json'
+        })
+      .preferredLanguage('es_MX');
+  }]);

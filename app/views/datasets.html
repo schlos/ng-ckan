@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-sm-12">
-      Search: 
+      {{ 'SEARCH' | translate }}: 
       <input type="text" search controller="DatasetsCtrl" update="datasets" ng-model="search">
     </div>
   </div>
@@ -13,12 +13,12 @@
 
     <div class="col-sm-9">
       <div class="row">
-        <strong>{{datasets.length}} datasets available</strong>
+        <strong>{{datasets.length}} {{ 'DATASETS_AVAILABLE' | translate}}</strong>
       </div>
       <div class="dataset row" ng-repeat="dataset in datasets | filter:search">
         <h4><a href="datasets/{{dataset.name}}">{{dataset.title}}</a></h4>
         <p>{{dataset.notes}}</p>
-        <cite class="text-muted">Published by {{dataset.organization.title}} - {{dataset.metadata_modified}}</cite>
+        <cite class="text-muted">{{ 'PUBLISHED_BY' | translate}} {{dataset.organization.title}} - {{dataset.metadata_modified}}</cite>
       </div>
     </div>
   </div>

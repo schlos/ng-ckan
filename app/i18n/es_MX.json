@@ -1,7 +1,7 @@
 {
-  DATASET: "Conjunto de datos",
-  "ORGANIZATION": "Insitución",
-  "GROUP": "Grupo",
-  "RESOURCE": "Recurso",
+  "DATASETS": "Conjuntos de datos",
+  "ORGANIZATIONS": "Instituciones",
+  "GROUPS": "Grupos",
+  "RESOURCES": "Recursos",
   "SEARCH": "Búsqueda"
 }
