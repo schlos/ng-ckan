@@ -25,7 +25,7 @@ angular
         templateUrl: 'views/datasets.html',
         controller: 'DatasetsCtrl'
       })
-      .when('/resources', {
+      .when('/datasets/:datasetId', {
         templateUrl: 'views/resources.html',
         controller: 'ResourcesCtrl'
       })
