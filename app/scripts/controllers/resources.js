@@ -8,7 +8,7 @@
  * Controller of the ngCkanApp
  */
 angular.module('ngCkanApp')
-  .controller('ResourcesCtrl', ['$scope', function ($scope) {
+  .controller('ResourcesCtrl', function ($scope, $routeParams, ckanService) {
     $scope.dataset = {
       'title': 'Encuesta Nacional de satisfacción a usuarios del servicio de guardería del IMSS.',
       'notes': 'Encuesta que permite captar la percepción de los derechohabientes usuarios del servicio de guardería del IMSS.',
@@ -38,5 +38,10 @@ angular.module('ngCkanApp')
         }
       ]
     };
-  }]);
+
+    ckanService.showDataset($routeParams.datasetId)
+      .then(function(result) {
+        $scope.dataset = result;
+      });
+  });
 
