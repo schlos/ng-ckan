@@ -11,11 +11,12 @@ angular.module('ngCkanApp')
   .service('ckanService', function ($http) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var baseUrl = 'http://catalogo.datos.gob.mx/api/3/action/',
-        datasets, dataset, organizations, organization, groups, group;
+        datasets, dataset, organizations, organization, groups, group, resultsCount;
 
     function cacheDatasets(response) {
+      resultsCount = response.data.result.count;
       datasets = response.data.result.results;
-      return datasets;
+      return { 'datasets': datasets, 'resultsCount': resultsCount };
     }
 
     function cacheDataset(response) {

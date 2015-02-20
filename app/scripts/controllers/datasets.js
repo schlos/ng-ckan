@@ -14,7 +14,8 @@ angular.module('ngCkanApp')
 
     ckanService.listDatasets($scope.start)
       .then(function(result) {
-        $scope.datasets = result;
+        $scope.datasets = result.datasets;
+        $scope.resultsCount = result.resultsCount;
       });
 
     $scope.query = function(query) {
