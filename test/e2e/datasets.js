@@ -13,12 +13,13 @@ describe('datasets', function() {
 
   it('should render datasets when user navigates to /datasets', function() {
     expect(element.all(by.css('.ng-binding')).first().getText()).
-      toMatch(/\d+ datasets available/);
+      toMatch(/\d+ conjuntos de datos/);
   });
 
   it('should list datasets', function() {
     expect(datasetList.count()).toEqual(3);
-    expect(datasetList.get(1).getText()).toMatch('Published by');
+    var dateInLongFormat = /\| \w+ \d+, \d+/;
+    expect(datasetList.get(1).getText()).toMatch(dateInLongFormat);
   });
 
   it('root should redirect to datasets', function() {
@@ -39,7 +40,7 @@ describe('datasets', function() {
 
   it('should link to dataset\'s detailed information', function() {
     // Click on a dataset link
-    element(by.binding('dataset.title')).click();
+    element.all(by.css('.dataset-item')).first().click();
     // Find a download link
     var content = element(by.css('[ng-view]')).getText();
     expect(content).toMatch(/Datos y recursos/);

@@ -20,7 +20,7 @@ describe('groups', function() {
   });
 
   it('should display logos', function() {
-    expect(element.all(by.css('img')).first().getAttribute('alt')).toMatch('Logo de');
+    expect(element.all(by.css('.thumbnail img')).first().getAttribute('alt')).toMatch('Logo de');
   });
 
   it('should filter groups as a user types into the search box', function() {
