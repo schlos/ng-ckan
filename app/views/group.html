@@ -1,0 +1,24 @@
+<div class="row" ng-controller="GroupCtrl">
+
+  <div class="row">
+    <div class="col-sm-3">
+      <a href="/#/groups/{{group.name}}" class="thumbnail">
+        <img src="{{group.image_display_url}}" alt="Logo de {{group.display_name}}" />
+      </a>
+      <p>{{group.description}}</p>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="row">
+        <strong>{{group.packages.length}} datasets available</strong>
+      </div>
+      <div class="dataset row" ng-repeat="dataset in group.packages">
+        <h4><a href="/#/datasets/{{dataset.name}}">{{dataset.title}}</a></h4>
+        <p>{{dataset.notes}}</p>
+        <cite class="text-muted">Published on {{dataset.metadata_modified}}</cite>
+      </div>
+    </div>
+  </div>
+
+</div>
+

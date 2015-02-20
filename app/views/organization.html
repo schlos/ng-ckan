@@ -1,0 +1,24 @@
+<div class="row" ng-controller="OrganizationCtrl">
+
+  <div class="row">
+    <div class="col-sm-3">
+      <a href="/#/organizations/{{organization.name}}" class="thumbnail">
+        <img src="{{organization.image_display_url}}" alt="Logo de {{organization.display_name}}" />
+      </a>
+      <p>{{organization.description}}</p>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="row">
+        <strong>{{organization.packages.length}} datasets available</strong>
+      </div>
+      <div class="dataset row" ng-repeat="dataset in organization.packages">
+        <h4><a href="/#/datasets/{{dataset.name}}">{{dataset.title}}</a></h4>
+        <p>{{dataset.notes}}</p>
+        <cite class="text-muted">Published on {{dataset.metadata_modified}}</cite>
+      </div>
+    </div>
+  </div>
+
+</div>
+

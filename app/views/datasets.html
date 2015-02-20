@@ -16,7 +16,7 @@
         <strong>{{datasets.length}} datasets available</strong>
       </div>
       <div class="dataset row" ng-repeat="dataset in datasets | filter:search">
-        <h4><a href="datasets/{{dataset.name}}">{{dataset.title}}</a></h4>
+        <h4><a href="/#/datasets/{{dataset.name}}">{{dataset.title}}</a></h4>
         <p>{{dataset.notes}}</p>
         <cite class="text-muted">Published by {{dataset.organization.title}} - {{dataset.metadata_modified}}</cite>
       </div>

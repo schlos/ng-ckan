@@ -6,7 +6,7 @@ describe('resources', function() {
   var resourceList;
 
   beforeEach(function() {
-    browser.get('/#/resources');
+    browser.get('/#/datasets/foo');
     resourceList = element.all(by.repeater('resource in dataset.resources'));
   });
 
@@ -21,3 +21,4 @@ describe('resources', function() {
   });
 
 });
+

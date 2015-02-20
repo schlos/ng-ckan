@@ -25,7 +25,7 @@ angular
         templateUrl: 'views/datasets.html',
         controller: 'DatasetsCtrl'
       })
-      .when('/resources', {
+      .when('/datasets/:datasetId', {
         templateUrl: 'views/resources.html',
         controller: 'ResourcesCtrl'
       })
@@ -33,9 +33,17 @@ angular
         templateUrl: 'views/organizations.html',
         controller: 'OrganizationsCtrl'
       })
+      .when('/organizations/:organizationId', {
+        templateUrl: 'views/organization.html',
+        controller: 'OrganizationCtrl'
+      })
       .when('/groups', {
         templateUrl: 'views/groups.html',
         controller: 'GroupsCtrl'
+      })
+      .when('/groups/:groupId', {
+        templateUrl: 'views/group.html',
+        controller: 'GroupCtrl'
       })
       .otherwise({
         redirectTo: '/'

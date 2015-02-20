@@ -37,4 +37,12 @@ describe('datasets', function() {
     expect(datasetList.count()).toEqual(1);
   });
 
+  it('should link to dataset\'s detailed information', function() {
+    // Click on a dataset link
+    element(by.binding('dataset.title')).click();
+    // Find a download link
+    var content = element(by.css('[ng-view]')).getText();
+    expect(content).toMatch(/Datos y recursos/);
+  });
+
 });
