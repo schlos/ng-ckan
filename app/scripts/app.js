@@ -19,29 +19,29 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        redirectTo: '/datasets'
+        redirectTo: '/conjuntos'
       })
-      .when('/datasets', {
+      .when('/conjuntos', {
         templateUrl: 'views/datasets.html',
         controller: 'DatasetsCtrl'
       })
-      .when('/datasets/:datasetId', {
+      .when('/conjuntos/:datasetId', {
         templateUrl: 'views/resources.html',
         controller: 'ResourcesCtrl'
       })
-      .when('/organizations', {
+      .when('/instituciones', {
         templateUrl: 'views/organizations.html',
         controller: 'OrganizationsCtrl'
       })
-      .when('/organizations/:organizationId', {
+      .when('/instituciones/:organizationId', {
         templateUrl: 'views/organization.html',
         controller: 'OrganizationCtrl'
       })
-      .when('/groups', {
+      .when('/grupos', {
         templateUrl: 'views/groups.html',
         controller: 'GroupsCtrl'
       })
-      .when('/groups/:groupId', {
+      .when('/grupos/:groupId', {
         templateUrl: 'views/group.html',
         controller: 'GroupCtrl'
       })
