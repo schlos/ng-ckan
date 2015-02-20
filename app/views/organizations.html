@@ -1,5 +1,5 @@
 <section ng-controller="OrganizationsCtrl">
-  
+
   <div class="datasets-heading organizations">
     <div class="main-container">
       <div class="cols-12">
@@ -45,11 +45,11 @@
       </div>
       <div class="col col-10 alpha omega">
         <div class="col-inner">
-          
+
           <div class="organizations-list">
             <div class="organization-item" ng-repeat="organization in organizations | filter:search">
               <div class="inner">
-                <a href="/#/organizations/{{organization.name}}">
+                <a href="#/organizations/{{organization.name}}">
                   <img src="{{organization.image_display_url}}" alt="Logo de {{organization.display_name}}" />
                 </a>
               </div>
