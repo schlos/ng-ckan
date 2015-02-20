@@ -14,14 +14,17 @@ angular.module('ngCkanApp')
     $scope.groups = [
       {
         'display_name': 'ReconstrucciónMX',
+        'name': 'rmx',
         'image_display_url': ''
       },
       {
         'display_name': 'Segundo Informe de Gobierno 2013-2014',
+        'name': 'segundo-informe-de-gobierno-2013-2014',
         'image_display_url': 'http://www.presidencia.gob.mx/segundoinforme/wp-content/themes/informe/assets/frontend/img/logo-big.png'
       },
       {
         'display_name': 'Tu Gobierno en Mapas',
+        'name': 'tu-gobierno-en-mapas',
         'image_display_url': ''
       }
     ];

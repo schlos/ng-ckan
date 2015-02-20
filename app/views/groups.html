@@ -14,7 +14,7 @@
 
     <div class="col-sm-9">
       <div class="col-md-3" ng-repeat="group in groups | filter:search">
-        <a href="#" class="thumbnail">
+        <a href="/#/groups/{{group.name}}" class="thumbnail">
           <img src="{{group.image_display_url}}" alt="Logo de {{group.display_name}}" />
         </a>
       </div>
