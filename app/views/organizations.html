@@ -1,25 +1,29 @@
 <section ng-controller="OrganizationsCtrl">
-
-  <div class="datasets-heading organizations">
-    <div class="main-container">
-      <div class="cols-12">
-        <div class="col col-2">
-          <div class="col-inner">
-            <h4>Instituciones</h4>
-            <p>{{organizations.length}} instituciones publicando datos abiertos</p>
+  <div class="main-container">
+    <div class="cols-12">
+      <div class="col col-2">
+        <div class="col-inner">
+          <div class="page-sidebar">
+            <div class="page-info">
+              <h2>Instituciones</h2>
+              <p>{{organizations.length}} instituciones publicando datos abiertos</p>
+            </div>
+            <gov-types-menu />
           </div>
         </div>
-        <div class="col col-10">
-          <div class="col-inner">
+      </div>
+      <div class="col col-10 alpha omega">
+        <div class="col-inner">
+          <div class="context-filters">
             <div class="cols-12">
-              <div class="col col-9 alpha">
+              <div class="col col-9">
                 <div class="col-inner">
-                  <div class="search-datasets">
+                  <div class="search">
                     <input type="text" search controller="OrganizationsCtrl" update="organizations" ng-model="search" placeholder="Buscar">
                   </div>
                 </div>
               </div>
-              <div class="col col-3 omega">
+              <div class="col col-3">
                 <div class="col-inner">
                   <div class="form-select">
                     <select>
@@ -29,23 +33,7 @@
                 </div>
               </div>
             </div>
-            <alphabet-menu />
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="main-container">
-    <div class="cols-12">
-      <div class="col col-2">
-        <div class="col-inner">
-          <gov-types-menu />
-        </div>
-      </div>
-      <div class="col col-10 alpha omega">
-        <div class="col-inner">
-
           <div class="organizations-list">
             <div class="organization-item" ng-repeat="organization in organizations | filter:search">
               <div class="inner">
@@ -55,11 +43,8 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
-
 </section>
-
