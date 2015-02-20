@@ -92,9 +92,16 @@
       <div class="col col-10">
         <div class="col-inner">
           <div class="datasets-list">
-            <div class="dataset-item" ng-repeat="dataset in datasets | filter:search">
+            <a href="datasets/{{dataset.name}}" class="dataset-item" ng-repeat="dataset in datasets | filter:search">
+              <div class="dataset-trending-flag">
+                <img ng-src="http://datos.gob.mx/assets/svg/icon-trending-green.svg" alt="">
+              </div>
+              <div class="dataset-formats">
+                <div class="dataset-format csv">CSV</div>
+                <div class="dataset-format kml">KML</div>
+              </div>
               <div class="dataset-main">
-                <h4 class="title"><a href="datasets/{{dataset.name}}">{{dataset.title}}</a></h4>
+                <h4 class="title">{{dataset.title}}</h4>
                 <div class="dataset-excerpt">
                   <p>{{dataset.notes}}</p>
                 </div>
@@ -104,7 +111,7 @@
                   </div>
                 </div>
               </div>
-            </div>    
+            </a>    
           </div>
         </div>
       </div>
