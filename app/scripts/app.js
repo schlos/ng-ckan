@@ -33,6 +33,10 @@ angular
         templateUrl: 'views/organizations.html',
         controller: 'OrganizationsCtrl'
       })
+      .when('/organizations/:organizationId', {
+        templateUrl: 'views/organization.html',
+        controller: 'OrganizationCtrl'
+      })
       .when('/groups', {
         templateUrl: 'views/groups.html',
         controller: 'GroupsCtrl'
