@@ -1,41 +1,5 @@
 <section ng-controller="OrganizationCtrl">
 
-  <div class="datasets-heading">
-    <div class="main-container">
-      <div class="cols-12">
-        <div class="col col-2">
-          <div class="col-inner">
-            <h3><a class="heading-title" href="#/organizations/{{organization.name}}">{{organization.display_name}}</a></h3>
-            <p>{{organization.packages.length}} conjuntos de datos</p>
-          </div>
-        </div>
-        <div class="col col-10">
-          <div class="col-inner">
-            <div class="cols-12">
-              <div class="col col-9 alpha">
-                <div class="col-inner">
-                  <div class="search-datasets">
-                    <input type="text" class="form-control" search controller="DatasetsCtrl" update="datasets" ng-model="search" placeholder="Buscar">
-                  </div>
-                </div>
-              </div>
-              <div class="col col-3 omega">
-                <div class="col-inner">
-                  <div class="form-select">
-                    <select>
-                      <option value="">Ordenar por relevancia</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <datasets-categories />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="single-organization">
     <div class="main-container">
       <div class="cols-12">
@@ -45,7 +9,11 @@
               <div class="organization-logo">
                 <img src="{{organization.image_display_url}}" alt="Logo de {{organization.display_name}}" />
               </div>
-              <div class="organization-desc">
+            </div>
+            <div class="page-sidebar">
+              <div class="page-info">
+                <h3>{{organization.display_name}}</h3>
+                <p>{{organization.packages.length}} conjuntos de datos</p>
                 <p>{{organization.description}}</p>
               </div>
             </div>
@@ -53,6 +21,26 @@
         </div>
         <div class="col col-10">
           <div class="col-inner">
+            <div class="context-filters">
+              <div class="cols-12">
+                <div class="col col-9 alpha">
+                  <div class="col-inner">
+                    <div class="search">
+                      <input type="text" class="form-control" search controller="DatasetsCtrl" update="datasets" ng-model="search" placeholder="Buscar">
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-3 omega">
+                  <div class="col-inner">
+                    <div class="form-select">
+                      <select>
+                        <option value="">Ordenar por relevancia</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="datasets-list">
               <a href="#/datasets/{{dataset.name}}" class="dataset-item" ng-repeat="dataset in organization.packages">
                 <div class="dataset-trending-flag">

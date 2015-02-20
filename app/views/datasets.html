@@ -1,20 +1,25 @@
 <section ng-controller="DatasetsCtrl">
 
-  <div class="datasets-heading">
-    <div class="main-container">
-      <div class="cols-12">
-        <div class="col col-2">
-          <div class="col-inner">
-            <h2>Datos</h2>
-            <p>{{datasets.length}} conjuntos de datos</p>
+  <div class="main-container">
+    <div class="cols-12">
+      <div class="col col-2">
+        <div class="col-inner">
+          <div class="page-sidebar">
+            <div class="page-info">
+              <h2>Datos</h2>
+              <p>{{datasets.length}} conjuntos de datos</p>
+            </div>
+            <gov-types-menu />
           </div>
         </div>
-        <div class="col col-10">
-          <div class="col-inner">
+      </div>
+      <div class="col col-10">
+        <div class="col-inner">
+          <div class="context-filters">
             <div class="cols-12">
               <div class="col col-9 alpha">
                 <div class="col-inner">
-                  <div class="search-datasets">
+                  <div class="search">
                     <input type="text" class="form-control" search controller="DatasetsCtrl" update="datasets" ng-model="search" placeholder="Buscar">
                   </div>
                 </div>
@@ -29,23 +34,7 @@
                 </div>
               </div>
             </div>
-            <datasets-categories />
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="main-container">
-    <div class="cols-12">
-      <div class="col col-2">
-        <div class="col-inner">
-          <gov-types-menu />
-        </div>
-      </div>
-
-      <div class="col col-10">
-        <div class="col-inner">
           <div class="datasets-list">
             <a href="#/datasets/{{dataset.name}}" class="dataset-item" ng-repeat="dataset in datasets | filter:search">
               <div class="dataset-trending-flag">
