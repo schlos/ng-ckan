@@ -19,38 +19,31 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">ngCkan</a>
+    <main id="main-content" tabindex="-1" role="main" aria-label="Contenido principal">
+      <div class="datasets">
+        <section class="datasets-navbar">
+          <div class="main-container">
+            <div class="cols-12">
+              <div class="col col-2"></div>
+              <div class="col col-10">
+                <div class="col-inner">
+                  <div class="datasets-home">
+                    <a ng-href="#/datasets">Home</a>
+                  </div>
+                  <ul class="nav-list">
+                    <li class="active"><a ng-href="#/datasets">Datasets</a></li>
+                    <li><a ng-href="#/resources">Resources</a></li>
+                    <li><a ng-href="#/organizations">Organizations</a></li>
+                    <li><a ng-href="#/groups">Groups</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a ng-href="#/datasets">Datasets</a></li>
-              <li><a ng-href="#/resources">Resources</a></li>
-              <li><a ng-href="#/organizations">Organizations</a></li>
-              <li><a ng-href="#/groups">Groups</a></li>
-            </ul>
-          </div>
-        </div>
+        </section>
+        <div ng-view=""></div>
       </div>
-    </div>
-
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+    </main>
 
     <div class="footer">
       <div class="container">
