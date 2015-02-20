@@ -1,25 +1,64 @@
-<div class="row" ng-controller="GroupsCtrl">
-
-  <div class="row">
-    <strong>{{groups.length}} groups publishing data</strong>
-    <div class="col-sm-12">
-      Search: 
-      <input type="text" search controller="GroupsCtrl" update="groups" ng-model="search">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-3">
-    </div>
-
-    <div class="col-sm-9">
-      <div class="col-md-3" ng-repeat="group in groups | filter:search">
-        <a href="/#/groups/{{group.name}}" class="thumbnail">
-          <img src="{{group.image_display_url}}" alt="Logo de {{group.display_name}}" />
-        </a>
+<section ng-controller="GroupsCtrl">
+    
+  <div class="datasets-heading organizations">
+    <div class="main-container">
+      <div class="cols-12">
+        <div class="col col-2">
+          <div class="col-inner">
+            <h4>Grupos</h4>
+            <p>{{groups.length}} grupos publicando datos abiertos</p>
+          </div>
+        </div>
+        <div class="col col-10">
+          <div class="col-inner">
+            <div class="cols-12">
+              <div class="col col-9 alpha">
+                <div class="col-inner">
+                  <div class="search-datasets">
+                    <input type="text" search controller="GroupsCtrl" update="groups" ng-model="search" placeholder="Buscar">
+                  </div>
+                </div>
+              </div>
+              <div class="col col-3 omega">
+                <div class="col-inner">
+                  <div class="form-select">
+                    <select>
+                      <option value="">Ordenar por nombre</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <alphabet-menu />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-</div>
+  <div class="main-container">
+    <div class="cols-12">
+      <div class="col col-2">
+        <div class="col-inner">
+          <gov-types-menu />
+        </div>
+      </div>
+      <div class="col col-10 alpha omega">
+        <div class="col-inner">
+          
+          <div class="organizations-list">
+            <div class="organization-item" ng-repeat="group in groups | filter:search">
+              <div class="inner">
+                <a href="/#/groups/{{group.name}}">
+                  <img src="{{group.image_display_url}}" alt="Logo de {{group.display_name}}" />
+                </a>
+              </div>
+            </div>
+          </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
