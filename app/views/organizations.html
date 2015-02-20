@@ -15,7 +15,7 @@
               <div class="col col-9 alpha">
                 <div class="col-inner">
                   <div class="search-datasets">
-                    <input type="text" search controller="OrganizationsCtrl" update="organizations" ng-model="search">
+                    <input type="text" search controller="OrganizationsCtrl" update="organizations" ng-model="search" placeholder="Buscar">
                   </div>
                 </div>
               </div>
@@ -62,15 +62,26 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-3">
-    </div>
+  <div class="main-container">
+    <div class="cols-12">
+      <div class="col col-2">
+        <div class="col-inner" gov-types-menu>
+        </div>
+      </div>
+      <div class="col col-10 alpha omega">
+        <div class="col-inner">
+          
+          <div class="organizations-list">
+            <div class="organization-item" ng-repeat="organization in organizations | filter:search">
+              <div class="inner">
+                <a href="/#/organizations/{{organization.name}}">
+                  <img src="{{organization.image_display_url}}" alt="Logo de {{organization.display_name}}" />
+                </a>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-sm-9">
-      <div class="col-md-3" ng-repeat="organization in organizations | filter:search">
-        <a href="/#/organizations/{{organization.name}}" class="thumbnail">
-          <img src="{{organization.image_display_url}}" alt="Logo de {{organization.display_name}}" />
-        </a>
+        </div>
       </div>
     </div>
   </div>
