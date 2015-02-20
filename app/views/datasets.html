@@ -41,8 +41,7 @@
                 <img ng-src="http://datos.gob.mx/assets/svg/icon-trending-green.svg" alt="">
               </div>
               <div class="dataset-formats">
-                <div class="dataset-format csv">CSV</div>
-                <div class="dataset-format kml">KML</div>
+                <div ng-repeat="f in (dataset | formats)" class="dataset-format {{f}}">{{f}}</div>
               </div>
               <div class="dataset-main">
                 <h4 class="title">{{dataset.title}}</h4>
@@ -55,7 +54,7 @@
                   </div>
                 </div>
               </div>
-            </a>    
+            </a>
           </div>
         </div>
       </div>
